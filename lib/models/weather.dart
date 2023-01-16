@@ -5,9 +5,9 @@ class Weather {
   final String date;
   final String conditionText;
   final String conditionIcon;
-  final String humidity;
-  final String uv;
-  final String wind;
+  final int humidity;
+  final double uv;
+  final double wind;
   final List forecast;
 
   Weather({
