@@ -18,4 +18,4 @@ class WeatherService {
 }
 
 const String apiKey = '585c7cc769444576a65131514230401';
-const String cityName = 'Los Angeles';
+const String cityName = 'Buraimi';
