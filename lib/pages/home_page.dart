@@ -64,6 +64,63 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
+                      const SizedBox(height: 25.0),
+                      Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '${weather!.temp}°',
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 7 * 9,
+                                  fontWeight: FontWeight.w100,
+                                ),
+                              ),
+                              Text(
+                                weather!.city,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 7 * 4,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const SizedBox(height: 3),
+                              Text(
+                                weather!.state,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 7 * 3,
+                                  fontWeight: FontWeight.w200,
+                                ),
+                              )
+                            ],
+                          ),
+                          const Spacer(),
+                          Column(
+                            children: <Widget>[
+                              Container(
+                                // color: Colors.red,
+                                width: 140,
+                                height: 110,
+                                child: Image.network(
+                                  'http://cdn.weatherapi.com/weather/64x64/day/113.png',
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Text(
+                                weather!.conditionText,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 7 * 3,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
