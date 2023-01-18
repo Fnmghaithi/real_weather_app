@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                         child: ListView.builder(
                           physics: const BouncingScrollPhysics(),
                           scrollDirection: Axis.horizontal,
-                          itemCount: weather!.forecast.length - 6 - 1,
+                          itemCount: weather!.forecast.length - currentHour - 1,
                           itemBuilder: (context, index) {
                             hour = weather!.forecast[currentHour + index]
                                     ['time']
