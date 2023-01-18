@@ -133,7 +133,6 @@ class _HomePageState extends State<HomePage> {
                                     ['condition']['text'];
                             temp = weather!.forecast[currentHour + index]
                                 ['temp_c'];
-                            print(hour);
                             return Padding(
                               padding: const EdgeInsets.symmetric(
                                   vertical: 5, horizontal: 7),
@@ -184,7 +183,133 @@ class _HomePageState extends State<HomePage> {
                             );
                           },
                         ),
-                      )
+                      ),
+                      const SizedBox(
+                        height: 5.0,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 5, horizontal: 7),
+                        child: Container(
+                          height: 150,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: const Color.fromARGB(18, 255, 255, 255),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                decoration: const BoxDecoration(
+                                  border: Border(
+                                    right: BorderSide(
+                                      color: Color.fromARGB(30, 255, 255, 255),
+                                    ),
+                                  ),
+                                ),
+                                height: 100,
+                                width: 110,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.network(
+                                      'https://cdn-icons-png.flaticon.com/512/2938/2938122.png',
+                                      width: 40,
+                                      height: 40,
+                                    ),
+                                    const SizedBox(height: 10),
+                                    const Text(
+                                      'Humidity',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 5),
+                                    Text(
+                                      '${weather!.humidity}%',
+                                      style: const TextStyle(
+                                        color:
+                                            Color.fromARGB(139, 255, 255, 255),
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                decoration: const BoxDecoration(
+                                  border: Border(
+                                    right: BorderSide(
+                                      color: Color.fromARGB(30, 255, 255, 255),
+                                    ),
+                                  ),
+                                ),
+                                height: 100,
+                                width: 120,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.network(
+                                      'https://i.pinimg.com/originals/53/22/c2/5322c2cad533e12e552d0dfdc89b4c25.png',
+                                      width: 40,
+                                      height: 40,
+                                    ),
+                                    const SizedBox(height: 10),
+                                    const Text(
+                                      'UV',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 5),
+                                    Text(
+                                      '${weather!.uv}',
+                                      style: const TextStyle(
+                                        color:
+                                            Color.fromARGB(139, 255, 255, 255),
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                height: 100,
+                                width: 110,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.network(
+                                      'https://static.thenounproject.com/png/7745-200.png',
+                                      width: 40,
+                                      height: 40,
+                                    ),
+                                    const SizedBox(height: 10),
+                                    const Text(
+                                      'Wind',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 5),
+                                    Text(
+                                      '${weather!.wind} km/h',
+                                      style: const TextStyle(
+                                        color:
+                                            Color.fromARGB(139, 255, 255, 255),
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
