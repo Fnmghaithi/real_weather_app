@@ -50,6 +50,18 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       TextField(
+                        onSubmitted: (value) async {
+                          if (value != '') {
+                            setState(() {
+                              isLoading = true;
+                            });
+                            weather = await weatherService.getWeather(
+                                cityName: value);
+                            setState(() {
+                              isLoading = false;
+                            });
+                          }
+                        },
                         style: const TextStyle(
                           color: Color.fromARGB(139, 255, 255, 255),
                         ),

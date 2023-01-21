@@ -3,8 +3,11 @@ import 'package:http/http.dart' as http;
 import 'package:real_weather_app/models/weather.dart';
 
 class WeatherService {
-  Future<Weather?> getWeather() async {
+  Future<Weather?> getWeather({String? cityName}) async {
     try {
+      if (cityName == null) {
+        cityName = 'New York';
+      }
       Uri url = Uri.parse(
           'http://api.weatherapi.com/v1/forecast.json?key=$apiKey&q=$cityName&days=1&aqi=no&alerts=no');
       http.Response response = await http.get(url);
@@ -18,4 +21,3 @@ class WeatherService {
 }
 
 const String apiKey = '585c7cc769444576a65131514230401';
-const String cityName = 'New York';
